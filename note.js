@@ -278,6 +278,22 @@ function createNoteFooter(note, noteElement) {
         footer.appendChild(circle);
     }
 
+    // Add delete button
+    const deleteButton = document.createElement('button');
+    deleteButton.className = 'delete-button';
+    deleteButton.textContent = '🗑';
+    deleteButton.addEventListener('click', () => {
+        console.log(`🗑 Deleting note with ID: ${note.id}`);
+        const noteIndex = notes.findIndex((n) => n.id === note.id);
+        if (noteIndex !== -1) {
+            notes.splice(noteIndex, 1);
+            renderNotes();
+            removeNoteFromMenu(note.id);
+        }
+    });
+
+    footer.appendChild(deleteButton);
+
     noteElement.appendChild(footer);
 }
 
