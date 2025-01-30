@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Note App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Note App</h1>
+  <div id="app-container">
+    <div id="side-menu">
+      <button id="log-notes-button">Log Notes</button>
+
+      <!-- Side menu content -->
+    </div>
+    <div id="note-container">
+      <!-- Notes will be created here -->
+    </div>
+    <div id="svg-container">
+      <!-- SVG arrows and debug lines will be drawn here -->
+    </div>
+  </div>
+  <p>Click anywhere to create a new note!</p>
+  
+
+    <!-- Load Notes Logic First -->
+    <script src="note.js"></script>
+    <!-- Load Utility Functions After Notes Exist -->
+    <script src="script.js"></script></body>
+</html>

@@ -1,0 +1,207 @@
+/* App container layout */
+#app-container {
+    position: relative;
+    height: calc(100vh - 60px); /* Adjust height to fit within the viewport */
+    display: flex;
+  }
+
+#svg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevent blocking interactions with notes */
+    z-index: 1000; /* Ensure it appears above other elements */
+  }
+
+  .linked-note {
+    color: blue; /* Color to indicate a clickable link */
+    text-decoration: underline;
+    cursor: pointer; /* Change cursor to pointer */
+}
+  
+
+/* Side menu styling */
+#side-menu {
+    width: 200px;
+    background-color: #f4f4f9;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+    padding: 10px;
+  }
+
+#side-menu h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.note-item {
+    padding: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.close-button {
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.close-button:hover {
+    color: #f00;
+}
+
+.note-item:hover {
+    background-color: #eaeaea;
+}
+
+/* Note container styling */
+#note-container {
+  flex: 1;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.note {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+}
+
+.note-title {
+    padding: 5px;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    cursor: text;
+    background-color: #f4f4f9;
+    white-space: nowrap;        /* Keep the text on a single line */
+    overflow: hidden;          /* Hide text that overflows the box */
+    text-overflow: ellipsis;   /* Add "..." at the end of the text */
+    max-width: 100%;           /* Ensure the title stays within the note's width */
+    box-sizing: border-box;    /* Include padding in the width calculation */
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.delete-button:hover {
+    color: #f00;
+}
+
+.drag-handle {
+    float: right;
+    cursor: grab;
+    font-size: 16px;
+    padding: 0 5px;
+    color: #999;
+}
+
+.drag-handle:active {
+    cursor: grabbing;
+}
+
+.note-text {
+    flex: none; /* Prevent flex-grow from altering the size */
+    width: 100%; /* Match the width of the note */
+    height: 120px; /* Fixed height for consistent appearance */
+    box-sizing: border-box; /* Ensure padding is included in width/height */
+}
+
+.color-circle {
+    flex: none; /* Ensure it doesn’t shrink or grow */
+    width: 20px;
+    height: 20px;
+}
+
+.note-footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; /* Center vertically */
+    height: 40px; /* Fixed height for consistent layout */
+}
+
+.color-circle:nth-child(1) { background-color: #f8d7da; }
+.color-circle:nth-child(2) { background-color: #d4edda; }
+.color-circle:nth-child(3) { background-color: #d1ecf1; }
+.color-circle:nth-child(4) { background-color: #fff3cd; }
+.color-circle:nth-child(5) { background-color: #fefefe; }
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  p {
+    text-align: center;
+    color: #666;
+  }
+  
+.dropdown {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1050; /* Ensure dropdown appears above the notes, but below the SVG */
+}
+
+.dropdown-option {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.dropdown-option:hover {
+    background-color: #f0f0f0;
+}
+
+.linked-note {
+    color: blue; /* Set the color to blue for clickable text */
+    text-decoration: underline; /* Underline to indicate it's a link */
+    cursor: pointer; /* Change the cursor to indicate clickability */
+}
+
+.linked-note-overlay {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    z-index: 10; /* Ensure it appears above the text area */
+    pointer-events: auto; /* Allow click interaction */
+}
+
+.linked-note {
+    color: blue; /* Make the text look like a link */
+    text-decoration: underline;
+    user-select: none; /* Prevents selection */
+    cursor: pointer; /* Makes it feel like a link */}
+
+.linked-note:hover {
+    color: darkblue; /* Highlight on hover */
+}
